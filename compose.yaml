@@ -1,0 +1,13 @@
+services:
+  asm-to-bin:
+    image: ubuntu
+    volumes:
+      - .:/asm
+    working_dir: /asm
+    command: >
+      bash -c "
+        dpkg --add-architecture i386 &&
+        apt-get update &&
+        apt-get install -y nasm &&
+        nasm -f bin program.asm -o program.bin
+      "
