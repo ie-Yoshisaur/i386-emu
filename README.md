@@ -16,14 +16,14 @@ To use `i386-emu`, you'll need to have Docker and Rust's cargo installed on your
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/i386-emu.git
-cd i386-emu
+$ git clone https://github.com/yourusername/i386-emu.git
+$ cd i386-emu
 ```
 
 2. Start the Docker environment:
 
 ```bash
-docker compose up -d
+$ docker compose up -d
 ```
 
 This command will set up the necessary environment and generate a `program.bin` file, which is a binary file that you can use to test the emulator.
@@ -31,7 +31,8 @@ This command will set up the necessary environment and generate a `program.bin` 
 3. Run the emulator with the generated binary:
 
 ```bash
-cargo run program.bin
+$ cargo build --release
+$ ./target/release/i386-emu -q program.bin
 ```
 
 This will start the i386 emulation using the `program.bin` as input.
