@@ -6,7 +6,6 @@ use std::collections::HashMap;
 use std::fs::File;
 use std::io::Read;
 
-const MEMORY_SIZE: usize = 1024 * 1024;
 const CARRY_FLAG: u32 = 1 << 0;
 const ZERO_FLAG: u32 = 1 << 1;
 const SIGN_FLAG: u32 = 1 << 2;
@@ -21,22 +20,6 @@ enum Register {
     Ebp,
     Esi,
     Edi,
-}
-
-impl Register {
-    pub fn from_usize(value: usize) -> Option<Self> {
-        match value {
-            0 => Some(Register::Eax),
-            1 => Some(Register::Ecx),
-            2 => Some(Register::Edx),
-            3 => Some(Register::Ebx),
-            4 => Some(Register::Esp),
-            5 => Some(Register::Ebp),
-            6 => Some(Register::Esi),
-            7 => Some(Register::Edi),
-            _ => None,
-        }
-    }
 }
 
 pub enum Register8 {

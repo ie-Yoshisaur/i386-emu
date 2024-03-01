@@ -11,17 +11,6 @@ pub struct ModRM {
 }
 
 impl ModRM {
-    fn new() -> Self {
-        Self {
-            mod_val: 0,
-            opecode: 0,
-            rm: 0,
-            sib: None,
-            disp8: None,
-            disp32: None,
-        }
-    }
-
     fn calc_memory_address(&self, emu: &Emulator) -> u32 {
         match self.mod_val {
             0 => match self.rm {
