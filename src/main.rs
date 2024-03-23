@@ -24,7 +24,7 @@ fn main() {
         })
         .collect();
     if args.len() != 2 {
-        eprintln!("Usage: {} <filename>", args[0]);
+        eprintln!("Usage: {} <binary_file>", args[0]);
         process::exit(1);
     }
     let filename = &args[1];
